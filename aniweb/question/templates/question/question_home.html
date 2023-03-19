@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Вопросы на сайте{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Вопросы на сайте</h1>
+        {% if questions %}
+            {% for el in questions %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <a href="{% url 'questions-detail' el.id %}" class="btn btn-warning">Открыть вопрос</a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет вопросов!</p>
+        {% endif %}
+
+
+    </div>
+{% endblock %}

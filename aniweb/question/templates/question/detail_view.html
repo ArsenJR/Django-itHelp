@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ question.title }}{% endblock %}
+
+{% block content %}
+    <div class="word-zone">
+        <h1>{{ question.title }}</h1>
+        <p>{{ question.date }}</p>
+        <div class="question-background">
+            <p>{{ question.full_text }}</p>
+        </div>
+
+        <input type="text" placeholder="Ваш ответ">
+    </div>
+{% endblock %}
